@@ -16,6 +16,7 @@
 		75539D181D0D253F004B1FAD /* calendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75539D171D0D253F004B1FAD /* calendarUITests.swift */; };
 		75539D261D0D2584004B1FAD /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75539D251D0D2584004B1FAD /* DateManager.swift */; };
 		75539D281D0D25A2004B1FAD /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75539D271D0D25A2004B1FAD /* CalendarCell.swift */; };
+		75A7952D1D1BE0AF006FD23E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7952C1D1BE0AF006FD23E /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		75539D191D0D253F004B1FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75539D251D0D2584004B1FAD /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		75539D271D0D25A2004B1FAD /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		75A7952C1D1BE0AF006FD23E /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				75539D031D0D253E004B1FAD /* Info.plist */,
 				75539D251D0D2584004B1FAD /* DateManager.swift */,
 				75539D271D0D25A2004B1FAD /* CalendarCell.swift */,
+				75A7952C1D1BE0AF006FD23E /* SecondViewController.swift */,
 			);
 			path = calendar;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				75539CFA1D0D253E004B1FAD /* ViewController.swift in Sources */,
 				75539D261D0D2584004B1FAD /* DateManager.swift in Sources */,
 				75539CF81D0D253E004B1FAD /* AppDelegate.swift in Sources */,
+				75A7952D1D1BE0AF006FD23E /* SecondViewController.swift in Sources */,
 				75539D281D0D25A2004B1FAD /* CalendarCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +494,7 @@
 				75539D1E1D0D253F004B1FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75539D1F1D0D253F004B1FAD /* Build configuration list for PBXNativeTarget "calendarTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				75539D211D0D253F004B1FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75539D221D0D253F004B1FAD /* Build configuration list for PBXNativeTarget "calendarUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				75539D241D0D253F004B1FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

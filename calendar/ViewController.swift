@@ -25,8 +25,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let daysPerWeek: Int = 7
     let cellMargin: CGFloat = 2.0
     var selectedDate = NSDate()
-    var today: NSDate!
+    var today: String!
     let weekArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
     
     @IBOutlet weak var headerPrevBtn: UIButton!//①
     @IBOutlet weak var headerNextBtn: UIButton!//②
@@ -41,6 +42,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         calenderCollectionView.delegate = self
         calenderCollectionView.dataSource = self
         calenderCollectionView.backgroundColor = UIColor.whiteColor()
+        headerTitle.text = changeHeaderTitle(selectedDate)
         
         
     }
@@ -104,11 +106,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = "d"
+        formatter.dateFormat = "M月d日"
+        
+        today = formatter.stringFromDate(dateManager.currentMonthOfDates[indexPath.row])
         
         NSLog("%@",formatter.stringFromDate(dateManager.currentMonthOfDates[indexPath.row]))
         
-        
+        performSegueWithIdentifier("toNextView", sender: self)
         
         
     }
@@ -126,11 +130,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //headerの月を変更
     func changeHeaderTitle(date: NSDate) -> String {
         let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = "M/yyyy"
+        formatter.dateFormat = "yyyy年M月"
         let selectMonth = formatter.stringFromDate(date)
         return selectMonth
     }
-    
     
     //①タップ時
     @IBAction func tappedHeaderPrevBtn(sender: UIButton) {
@@ -144,6 +147,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         selectedDate = dateManager.nextMonth(selectedDate)
         calenderCollectionView.reloadData()
         headerTitle.text = changeHeaderTitle(selectedDate)
+    }
+    
+    @IBAction func back(segue:UIStoryboardSegue){//戻るボタン用
+        print("back")
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        var secondViewController:SecondViewController = segue.destinationViewController as! SecondViewController
+        
+        secondViewController.Date = today
     }
     
 }
