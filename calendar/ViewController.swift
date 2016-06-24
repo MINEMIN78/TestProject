@@ -43,6 +43,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         calenderCollectionView.dataSource = self
         calenderCollectionView.backgroundColor = UIColor.whiteColor()
         headerTitle.text = changeHeaderTitle(selectedDate)
+        headerPrevBtn.titleLabel?.text = changeHeaderTitle(dateManager.prevMonth(selectedDate))
+        headerNextBtn.titleLabel?.text = changeHeaderTitle(dateManager.nextMonth(selectedDate))
+    
+        
         
         
     }

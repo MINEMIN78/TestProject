@@ -8,10 +8,11 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     var Date: String!
     @IBOutlet var dateLabel:UILabel!
+    @IBOutlet weak var previewImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,44 @@ class SecondViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func addImageTapped(sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
+        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(.PhotoLibrary)!
+        imagePicker.allowsEditing = false
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        self.previewImageView.image = image
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func composeTapped() {
+        
+        let imageToBeUploaded = self.previewImageView.image
+        
+        let imageData:NSData = UIImagePNGRepresentation(imageToBeUploaded!)!
+        
+        let imageOneData = UIImageJPEGRepresentation(imageToBeUploaded!,0.5)
+        
+        
+        do {
+            
+            //save
+        } catch {
+            // Error handling...
+        }
+        
+        //        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("postController")
+        //        self.presentViewController(vc! as UIViewController, animated: true, completion: nil)
+        
     }
     
 
